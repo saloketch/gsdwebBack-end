@@ -14,6 +14,8 @@ class InstructorDetailController extends Controller
      */
     public function index()
     {
+         $instructor_details =InstructorDetail::all();
+return $instructor_details;
         //
     }
 
