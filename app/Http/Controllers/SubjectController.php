@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subject;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateSubjectRequest;
+use App\Http\Requests\subjectRequest;
 
 class SubjectController extends Controller
 {
@@ -15,6 +15,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
+
         //
         
     }
@@ -35,8 +36,13 @@ class SubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(subjectRequest $request)
    {
+$subjects = Subject::create(
+
+request(['name','description','levelOfEducationId'])
+
+    );
      //
     }
 
