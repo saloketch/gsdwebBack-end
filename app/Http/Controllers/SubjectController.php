@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateSubjectsRequest;
 use App\Subject;
 use Illuminate\Http\Request;
 use App\Http\Requests\subjectRequest;
@@ -15,10 +16,15 @@ class SubjectController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         //
         
+=======
+        return response()->json(Subject::all());
+>>>>>>> b149f97c10dc56af2552183abf89bc63f1a725e1
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,6 +42,7 @@ class SubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function store(subjectRequest $request)
    {
 $subjects = Subject::create(
@@ -44,6 +51,19 @@ request(['name','description','levelOfEducationId'])
 
     );
      //
+=======
+
+    public function store(CreateSubjectsRequest $request)
+    {
+        $subjects = Subject::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'levelOfEducationId' => $request->levelOfEducationId,
+        ]);
+
+
+        return response()->json($subjects);
+>>>>>>> b149f97c10dc56af2552183abf89bc63f1a725e1
     }
 
     /**
