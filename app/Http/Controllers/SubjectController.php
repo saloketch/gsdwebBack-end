@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSubjectsRequest;
 use App\Subject;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Http\Requests\subjectRequest;
+=======
+>>>>>>> 7969a0057c7fc143345cafde1de58a402b7743fc
 
 class SubjectController extends Controller
 {
@@ -63,7 +66,11 @@ request(['name','description','levelOfEducationId'])
 
 
         return response()->json($subjects);
+<<<<<<< HEAD
 >>>>>>> b149f97c10dc56af2552183abf89bc63f1a725e1
+=======
+
+>>>>>>> 7969a0057c7fc143345cafde1de58a402b7743fc
     }
 
     /**

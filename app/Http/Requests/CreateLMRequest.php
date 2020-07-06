@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class subjectRequest extends FormRequest
+class CreateLMRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,13 @@ class subjectRequest extends FormRequest
     public function rules()
     {
         return [
-         'name' => 'required|subjects',
-            'description' => 'required|subjects',
-            'levelOfEducationId'=>'required',
-            //
+            'name' => 'required|unique:learning_materials',
+            'description' => 'required',
+            'file' => 'required|mimes:mpeg,avi,mp4,viv,mov,jpgv,movie,txt,text,pdf,pptx',
+            'subjectId' => 'required',
+            'typeOfLearningMaterialId' => 'required',
+            'chapterId' => 'required',
+            'InstructorId' => 'required',
         ];
     }
 }

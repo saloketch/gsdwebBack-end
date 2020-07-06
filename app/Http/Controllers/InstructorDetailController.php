@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateInstrDRequest;
 use App\InstructorDetail;
 use Illuminate\Http\Request;
 
@@ -35,9 +36,16 @@ return $instructor_details;
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateInstrDRequest $request)
     {
-        //
+        $instructorDetails = InstructorDetail::create([
+            'userId' => $request->userId,
+            'name' => $request->name,
+            'description' => $request->description,
+
+            ]);
+
+        return response()->json($instructorDetails);
     }
 
     /**
@@ -80,8 +88,10 @@ return $instructor_details;
      * @param  \App\InstructorDetail  $instructorDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(InstructorDetail $instructorDetail)
+    public function destroy(InstructorDetail $instructorDetails)
     {
-        //
+        $instructorDetails->delete();
+
+        return response()->json(null);
     }
 }

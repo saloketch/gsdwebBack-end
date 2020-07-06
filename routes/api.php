@@ -21,4 +21,10 @@ Route::Resource('subjects','SubjectController');
 Route::Resource('instructordetails','InstructorDetailController');
 Route::Resource('chapters','ChapterController');
 Route::resource('LevelOfEducations','LevelOfEducationController');
+<<<<<<< HEAD
 Route::Resource('learningMaterial','LearningMaterialController');
+=======
+Route::Resource('learningMaterialType','LearningMaterialTypeController');
+Route::Resource('learningMaterials','LearningMaterialController');
+Route::Resource('instructorDetails','InstructorDetailController');
+>>>>>>> 7969a0057c7fc143345cafde1de58a402b7743fc
